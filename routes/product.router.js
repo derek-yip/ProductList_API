@@ -6,8 +6,9 @@ const postgre = require('../database')
 router.get("/", async(req,res)=>{
     try {
         // const products = await sql`SELECT * FROM product;`;
-        const products = await postgre.query("select * from product")
-        res.json({productlist: products.rows})
+        //const products = await postgre.query("select * from product")
+        const products = await client.sql`SELECT * FROM product;`;
+        res.json({productlist: products})
     } catch (error) {
         res.json({msg: error.msg})
     }
