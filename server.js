@@ -5,6 +5,7 @@ require('dotenv').config()
 
 app.use(express.json())
 
+
 const productRouter = require('./routes/product.router')
 
 const PORT = process.env.PORT

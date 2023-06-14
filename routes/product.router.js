@@ -1,9 +1,10 @@
 const express = require("express")
 const router = express.Router()
 const postgre = require('../database')
-
+const {db} = require('@vercel/postgres');
 
 router.get("/", async(req,res)=>{
+    const client = await db.connect();
     try {
         // const products = await sql`SELECT * FROM product;`;
         //const products = await postgre.query("select * from product")
