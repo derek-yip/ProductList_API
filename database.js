@@ -1,5 +1,7 @@
 const { Pool } = require('pg')
 require('dotenv').config()
+import { db } from '@vercel/postgres';
+const client = await db.connect();
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
