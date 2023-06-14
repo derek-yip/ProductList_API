@@ -10,6 +10,7 @@
       {
         "src": "/(.*)",
         "dest": "/"
-      } 
+      } ,
+      { "src": "/api/product", "dest": "product.router.js" }
     ]
 }
