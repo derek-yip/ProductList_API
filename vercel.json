@@ -13,5 +13,5 @@
       } ,
       { "src": "/api/product", "dest": "product.router.js" }
     ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+    "rewrites": [{ "source": "/server", "destination": "/" }]
 }
