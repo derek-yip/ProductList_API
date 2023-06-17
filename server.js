@@ -10,9 +10,14 @@ const productRouter = require('./routes/product.router')
 
 const PORT = process.env.PORT
 
-app.listen(PORT, ()=> {
-    console.log(`server is running on ${PORT}`);
+app.listen(process.env.PORT, ()=> {
+    console.log(`server is running on ${process.env.PORT}`);
 })
+
+app.listen(process.env.MYSQLPORT, ()=> {
+    console.log(`server is running on ${process.env.MYSQLPORT}`);
+})
+
 app.use('/api/product', productRouter)
 
 

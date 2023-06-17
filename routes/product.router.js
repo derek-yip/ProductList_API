@@ -1,27 +1,25 @@
 const express = require("express")
 const router = express.Router()
-const postgre = require('../database')
-const {db} = require('@vercel/postgres');
+const db = require('../database')
 
 router.get("/", async(req,res)=>{
-    const client = await db.connect();
+    // const client = await db.connect();
     try {
-        // const products = await sql`SELECT * FROM product;`;
-        //const products = await postgre.query("select * from product")
-        const products = await client.sql`SELECT * FROM product;`;
-        res.json({productlist: 'products'})
+        const products = await db.promise().query("SELECT * FROM Product")
+        // const products = await client.sql`SELECT * FROM product;`;
+        res.json({productlist: products[0]})
     } catch (error) {
-        res.json({msg: error.msg})
+        res.json({msg: error})
     }
 })
 
 router.get("/:id", async(req,res)=>{
     try {
         // const products = await sql`SELECT * FROM product;`;
-        const products = await postgre.query(`select * from product where id = ${req.params.id}`)
-        res.json(products.rows)
+        const products = await db.promise().query(`SELECT * from Product where id = ${req.params.id}`)
+        res.json(products)
     } catch (error) {
-        res.json({msg: error.msg})
+        res.json({msg: error})
     }
 })
 
