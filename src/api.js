@@ -18,6 +18,16 @@ const ProductRouter = require('./products')
 // app.listen(process.env.MYSQLPORT, ()=> {
 //     console.log(`server is running on ${process.env.MYSQLPORT}`);
 // })
+app.get('/', async(req,res)=>{
+    try {
+        res.status = 200
+        res.json({'message': 'Server Sucessfully Connected'})
+    } catch (error) {
+        res.status = 400
+        res.json({'msg': error})
+    }
+})
+
 router.get('/', async(req,res)=>{
     try {
         res.status = 200
