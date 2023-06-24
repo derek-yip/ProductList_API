@@ -3,10 +3,5 @@
 
 [[redirects]]
   from = '/api/*'
-  to = '/.netlify/functions/api/:splat'
-  status = 200
-
-[[redirects]]
-  from = '/api/product/*'
-  to = '/.netlify/functions/api/product/:splat'
+  to = '/.netlify/functions/:splat'
   status = 200
