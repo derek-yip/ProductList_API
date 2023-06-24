@@ -14,7 +14,7 @@
     "dev": "nodemon server.js",
     "lambda-start": "./node_modules/.bin/netlify-lambda serve src",
     "lambda-build": "./node_modules/.bin/netlify-lambda build src",
-    "set-dev" : "NODE_OPTIONS='--openssl-legacy-provider",
+    "set-dev" : "NODE_OPTIONS=--openssl-legacy-provider",
     "build" : "npm run set-dev && npm run lambda-build"
   },
   "name": "api-server",
