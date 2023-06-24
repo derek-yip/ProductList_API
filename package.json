@@ -3,11 +3,15 @@
     "dotenv": "^16.1.4",
     "express": "^4.18.2",
     "mysql2": "^3.3.5",
-    "railway": "^2.0.17"
+    "netlify-lambda": "^0.4.0",
+    "railway": "^1.0.1",
+    "serverless-http": "^3.2.0"
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "lambda-start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
   },
   "name": "api-server",
   "version": "1.0.0",
@@ -16,6 +20,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^1.14.9"
   }
 }
