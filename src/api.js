@@ -27,7 +27,7 @@ router.get('/', async(req,res)=>{
         res.json({'msg': 'error'})
     }
 })
-app.use('/.netlify/functions/api/', router);
-app.use('/.netlify/functions/api/product/', ProductRouter);
+app.use('/api/', router);
+app.use('/api/product/', ProductRouter);
 
 module.exports.handler = serverless(app);
